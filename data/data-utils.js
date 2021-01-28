@@ -1,11 +1,13 @@
 export function saveUser(user) {
-    const character = JSON.stringify(user);
-    localStorage.setItem('user', character);
+    const json = JSON.stringify(user);
+    localStorage.setItem('USER', json);
 }
 
 export function getUser() {
-    const character = localStorage.getItem('user');
-    if (!character) return null;
-    const user = JSON.parse(character);
+    const json = localStorage.getItem('USER');
+    if (!json) return null;
+    const user = JSON.parse(json);
     return user;
+
+
 }

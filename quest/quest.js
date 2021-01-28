@@ -1,15 +1,16 @@
 import { findById } from '../utils.js';
 import quests from '../data/data.js'; 
-import { getUser } from '../data/data-utils.js';
+import { getUser, saveUser } from '../data/data-utils.js';
 const h1 = document.querySelector('h1');
 const p = document.querySelector('p');
 const form = document.querySelector('form');
 const img = document.querySelector('img');
 const div = document.querySelector('div');
+const span = document.querySelector('span');
 
 const params = new URLSearchParams(window.location.search);
 
-const questId = params.get('id');
+export const questId = params.get('id');
 
 const quest = findById(quests, questId);
 h1.textContent = quest.title;
@@ -29,7 +30,8 @@ for (let choice of quest.choices) {
     radio.value = choice.id;
     radio.name = 'choices';
     label.append(span, radio);
-    form.append(label, div);
+    form.append(label);
+    p.appendChild(div);
     
 }
 
@@ -49,7 +51,6 @@ form.addEventListener('submit', (e) => {
   
     const user = getUser();
     
-    
     user.hp += choice.hp;
     user.souvenirMugs += choice.souvenirMugs;
     user.completed[questId] = true;
@@ -57,9 +58,25 @@ form.addEventListener('submit', (e) => {
 
     
     div.textContent = choice.result;
+    form.textContent = '';
+   
     
-
-    localStorage.setItem('USER', JSON.stringify(user));
+    saveUser(user);
     
 });
 
+
+
+
+
+
+const backButton = document.createElement('button');
+backButton.classList.add('back-button');
+span.append(backButton);
+backButton.textContent = 'back on the road';
+
+backButton.addEventListener('click', () => {
+   
+    window.location = '../roadMap';
+    
+});

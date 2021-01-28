@@ -7,6 +7,7 @@ const creepySwamp = {
         top: '89%',
         left: '44%'
     },
+    prerequisites: ['devil', 'mothMan'],
     image: 'creepySwamp.png',
     description: `
             You've heard tales of a predator attacking locals in a swamp near by, you hope that you don't run into any ghoulies, but alas, you see something emerge from the water in the distance...a...CREATURE'
@@ -84,7 +85,7 @@ const mothMan = {
         top: '31%',
         left: '5%'
     },
-    // prerequisites: ['dragon', 'monsters'],
+    prerequisites: ['devil'],
     image: 'mothMan.png',
     // audio: 'treasure-chests.wav',
     // action: 'chest-opening.wav',
