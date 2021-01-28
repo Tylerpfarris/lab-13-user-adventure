@@ -1,0 +1,8 @@
+body  {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    display: block;
+    margin: 20px;
+}

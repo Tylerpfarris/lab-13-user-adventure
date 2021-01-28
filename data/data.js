@@ -18,7 +18,7 @@ const creepySwamp = {
             Its a friggen swamp creature, how tuff can it be, plus you gotta show jeff and lenny when you get back home-- thank god you brought your favorite rope today- you try to lasso that wet slimy beast but the rope just slides off- crap! That wet bugger slimes their way to you and give you the gnarliest wet willy you've ever gotten... and takes a nice bight out of your arm... maybe a rope wasn't the best idea. You lose 20HP.
         `,
         hp: -20,
-        souvenirMug: 0 
+        souvenirMugs: 0 
     }, {
         id: 'fight',
         description: 'Break out your trusty bottle of sanitizer and give that beastie a squirt!',
